@@ -1,0 +1,74 @@
+<!-- Dedicated to God the Father -->
+
+<!-- All Rights Reserved Christopher Andrew Topalian Copyright 2000-2023 -->
+
+<!-- https://github.com/ChristopherTopalian -->
+
+<!-- https://github.com/ChristopherAndrewTopalian -->
+
+<!-- Topalian_JavaScript_Sun_Report.html -->
+
+<!-- Version 002 -->
+
+<html>
+<head>
+<title> Topalian JavaScript Sun Report </title>
+
+<link rel = "stylesheet" href = "css/style001.css">
+
+<script src = "js/utility.js"></script>
+
+<script src = "data/solarData.js"></script>
+
+<script>
+
+function createApp(whichArray)
+{
+    let titleOfApp = ce("div");
+    titleOfApp.textContent = "Topalian JavaScript Sun Report";
+    titleOfApp.style.fontSize = "30px";
+    ba(titleOfApp);
+
+    //-//
+
+    let lineBreakUnderTitle = ce("hr");
+    ba(lineBreakUnderTitle);
+
+    //-//
+
+    for (let x = 0; x < whichArray.length; x++)
+    {
+        let nameOfImage = ce("div");
+        nameOfImage.className = "nameOfImage";
+        nameOfImage.innerHTML = whichArray[x].name;
+        nameOfImage.setAttribute("gloss", whichArray[x].description);
+        ba(nameOfImage);
+
+        //-//
+
+        let theImage = ce("img");
+
+        theImage.src = whichArray[x].url;
+
+        theImage.style.width = whichArray[x].theWidth + "px";
+
+        theImage.style.height = whichArray[x].theHeight + "px"; 
+
+        ba(theImage);
+        
+        //-//
+
+        let lineBreakUnderImage = ce("hr");
+        ba(lineBreakUnderImage);
+    }
+}
+
+</script>
+
+</head>
+
+<body onload = "createApp(solarData);">
+
+</body>
+
+</html>
